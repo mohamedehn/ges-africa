@@ -6,12 +6,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="process-step text-center">
-      <div class="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">
+    <div class="process-step text-center h-full flex flex-col">
+      <div class="w-20 h-20 bg-ges-green rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">
         <span class="text-white text-2xl font-bold">{{ stepNumber }}</span>
       </div>
       <h3 class="text-lg font-bold text-ges-dark mb-2">{{ title }}</h3>
-      <p class="text-sm text-gray-600">{{ description }}</p>
+      <p class="text-sm text-gray-600 flex-grow">{{ description }}</p>
     </div>
   `
 })

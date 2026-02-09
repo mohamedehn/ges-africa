@@ -6,12 +6,15 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition">
-      <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-lg flex items-center justify-center mb-6">
-        <i [class]="'fas ' + icon + ' text-ges-green text-2xl'"></i>
+    <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition h-full flex flex-col overflow-hidden">
+      <img *ngIf="imageUrl" [src]="imageUrl" [alt]="title" class="w-full h-48 object-cover">
+      <div class="p-8 grow flex flex-col">
+        <h3 class="text-xl font-bold text-ges-dark mb-3">
+          <i [class]="'fas ' + icon + ' text-ges-green mr-2'"></i>
+          {{ title }}
+        </h3>
+        <p class="text-gray-600 grow">{{ description }}</p>
       </div>
-      <h3 class="text-xl font-bold text-ges-dark mb-3">{{ title }}</h3>
-      <p class="text-gray-600">{{ description }}</p>
     </div>
   `
 })
@@ -19,4 +22,5 @@ export class ServiceCardComponent {
   @Input() icon!: string;
   @Input() title!: string;
   @Input() description!: string;
+  @Input() imageUrl?: string;
 }

@@ -6,13 +6,13 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="bg-gray-50 rounded-xl overflow-hidden card-hover">
+    <div class="bg-gray-50 rounded-xl overflow-hidden card-hover h-full flex flex-col">
       <img [src]="imageUrl" [alt]="title" class="w-full h-64 object-cover">
-      <div class="p-6">
+      <div class="p-6 grow flex flex-col">
         <h3 class="text-2xl font-bold text-ges-dark mb-3">{{ title }}</h3>
-        <p class="text-gray-600 mb-4">{{ description }}</p>
+        <p class="text-gray-600 mb-4 grow min-h-12">{{ description }}</p>
         <div class="flex flex-wrap gap-2">
-          <span *ngFor="let tag of tags" class="bg-secondary bg-opacity-10 text-ges-green px-3 py-1 rounded-full text-sm font-medium">
+          <span *ngFor="let tag of tags" class="bg-ges-green text-white px-3 py-1 rounded-full text-sm font-medium">
             {{ tag }}
           </span>
         </div>

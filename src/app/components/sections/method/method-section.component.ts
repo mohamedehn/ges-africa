@@ -16,13 +16,13 @@ interface Step {
     <section id="methode" class="py-20 bg-ges-light">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-ges-dark mb-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-ges-dark mb-4">
             Notre méthode en 5 étapes
           </h2>
-          <p class="text-xl text-gray-600">Une approche structurée pour des résultats mesurables</p>
+          <p class="text-lg md:text-xl text-gray-600">Une approche structurée pour des résultats mesurables</p>
         </div>
 
-        <div class="grid md:grid-cols-5 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
           <app-process-step
             *ngFor="let step of steps"
             [stepNumber]="step.stepNumber"
@@ -31,11 +31,13 @@ interface Step {
           </app-process-step>
         </div>
 
+        <!-- Bouton désactivé temporairement - à réactiver dans une prochaine version
         <div class="text-center mt-12">
           <a href="#methode" class="inline-block bg-ges-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-opacity-90 transition">
             Voir notre méthode en détail
           </a>
         </div>
+        -->
       </div>
     </section>
   `

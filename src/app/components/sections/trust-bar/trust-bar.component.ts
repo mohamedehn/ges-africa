@@ -13,10 +13,10 @@ interface TrustItem {
   template: `
     <section class="bg-white py-8 border-b">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           <div *ngFor="let item of trustItems" class="text-center">
-            <i [class]="'fas ' + item.icon + ' text-ges-green text-3xl mb-2'"></i>
-            <p class="text-sm font-medium text-ges-dark">{{ item.text }}</p>
+            <i [class]="'fas ' + item.icon + ' text-ges-green text-2xl md:text-3xl mb-2'"></i>
+            <p class="text-xs md:text-sm font-medium text-ges-dark">{{ item.text }}</p>
           </div>
         </div>
       </div>

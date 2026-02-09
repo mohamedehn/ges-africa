@@ -1,23 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { LogoComponent } from '../../shared/logo/logo.component';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LogoComponent, RouterLink],
   template: `
     <footer class="bg-ges-dark text-white py-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <div class="flex items-center space-x-3 mb-4">
-              <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center">
-                <i class="fas fa-bolt text-white"></i>
-              </div>
-              <div>
-                <div class="text-xl font-bold">GES</div>
-                <div class="text-xs font-semibold text-ges-green">AFRICA</div>
-              </div>
+            <div class="mb-4">
+              <app-logo size="small"></app-logo>
             </div>
             <p class="text-gray-400 text-sm">
               Bureau d'études premium ENR, BIM & Smart Building
@@ -50,7 +46,7 @@ import { CommonModule } from '@angular/common';
             <ul class="space-y-2 text-gray-400 text-sm">
               <li class="flex items-center">
                 <i class="fas fa-envelope mr-2 text-ges-green"></i>
-                contact@ges-africa.com
+                direction@ges-africa.com
               </li>
               <li class="flex items-center">
                 <i class="fas fa-map-marker-alt mr-2 text-ges-green"></i>
@@ -70,9 +66,9 @@ import { CommonModule } from '@angular/common';
             © 2026 GES Africa. Tous droits réservés.
           </div>
           <div class="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" class="hover:text-ges-green transition">Mentions légales</a>
-            <a href="#" class="hover:text-ges-green transition">Politique de confidentialité</a>
-            <a href="#" class="hover:text-ges-green transition">Cookies</a>
+            <a [routerLink]="['/mentions-legales']" class="hover:text-ges-green transition cursor-pointer">Mentions légales</a>
+            <a [routerLink]="['/politique-confidentialite']" class="hover:text-ges-green transition cursor-pointer">Politique de confidentialité</a>
+            <a [routerLink]="['/cookies']" class="hover:text-ges-green transition cursor-pointer">Cookies</a>
           </div>
         </div>
       </div>

@@ -13,15 +13,15 @@ interface Feature {
   standalone: true,
   imports: [CommonModule, FeatureCardComponent],
   template: `
-    <section class="py-20 bg-white">
+    <section id="features" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-ges-dark mb-4">
-            Pourquoi GES Africa
+          <h2 class="text-3xl md:text-4xl font-bold text-ges-dark mb-4">
+            Pourquoi GES Africa ?
           </h2>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <app-feature-card
             *ngFor="let feature of features"
             [icon]="feature.icon"
