@@ -204,37 +204,48 @@ export class ContactSectionComponent {
     this.isSubmitting = true;
     this.submitStatus = 'idle';
 
-    // Création du corps de l'email
-    const mailtoLink = `mailto:direction@ges-africa.com?subject=${encodeURIComponent('Nouvelle demande : ' + this.formData.subject)}&body=${encodeURIComponent(
-      `Nom: ${this.formData.name}\n` +
-      `Entreprise: ${this.formData.company}\n` +
-      `Email: ${this.formData.email}\n` +
-      `Téléphone: ${this.formData.phone || 'Non renseigné'}\n` +
-      `Type de projet: ${this.formData.subject}\n\n` +
-      `Message:\n${this.formData.message}`
-    )}`;
+    const formspreeUrl = 'https://formspree.io/f/xnjbnloz';
 
-    // Ouvrir le client email
-    window.location.href = mailtoLink;
-
-    // Simuler un délai pour l'UX
-    setTimeout(() => {
-      this.isSubmitting = false;
-      this.submitStatus = 'success';
-
-      // Réinitialiser le formulaire après 3 secondes
-      setTimeout(() => {
-        this.formData = {
-          name: '',
-          company: '',
-          email: '',
-          phone: '',
-          subject: '',
-          message: '',
-          consent: false
-        };
-        this.submitStatus = 'idle';
-      }, 3000);
-    }, 1000);
+    fetch(formspreeUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: this.formData.name,
+        company: this.formData.company,
+        email: this.formData.email,
+        phone: this.formData.phone || 'Non renseigné',
+        subject: `Nouvelle demande : ${this.formData.subject}`,
+        message: this.formData.message,
+        _replyto: this.formData.email,
+        _subject: `📧 GES Africa - ${this.formData.subject}`
+      })
+    })
+      .then(response => {
+        if (response.ok) {
+          this.submitStatus = 'success';
+          setTimeout(() => {
+            this.formData = {
+              name: '',
+              company: '',
+              email: '',
+              phone: '',
+              subject: '',
+              message: '',
+              consent: false
+            };
+            this.submitStatus = 'idle';
+          }, 3000);
+        } else {
+          this.submitStatus = 'error';
+        }
+      })
+      .catch(() => {
+        this.submitStatus = 'error';
+      })
+      .finally(() => {
+        this.isSubmitting = false;
+      });
   }
 }
