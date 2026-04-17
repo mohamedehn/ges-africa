@@ -13,7 +13,7 @@ import { LogoComponent } from '../../shared/logo/logo.component';
         <div class="flex justify-between items-center h-20">
           <!-- Logo -->
           <div class="flex items-center">
-            <app-logo size="medium"></app-logo>
+            <app-logo size="medium" [theme]="scrolled ? 'light' : 'dark'"></app-logo>
           </div>
 
           <!-- Menu Desktop -->

@@ -15,7 +15,7 @@ import { LogoComponent } from '../../shared/logo/logo.component';
           <!-- Brand -->
           <div class="lg:col-span-1">
             <div class="mb-5">
-              <app-logo size="small"></app-logo>
+              <app-logo size="small" theme="dark"></app-logo>
             </div>
             <p class="text-white/50 text-sm leading-relaxed mb-6">
               Bureau d'études premium spécialisé en ingénierie ENR, BIM et Smart Building à travers l'Afrique, l'Europe et le MENA.
