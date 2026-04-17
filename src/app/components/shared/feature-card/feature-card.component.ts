@@ -6,12 +6,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="text-center h-full flex flex-col">
-      <div class="w-20 h-20 bg-ges-green bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
-        <i [class]="'fas ' + icon + ' text-ges-green text-3xl'"></i>
+    <div class="text-center h-full flex flex-col p-6 rounded-2xl hover:bg-ges-light transition-colors group">
+      <div class="w-16 h-16 bg-ges-dark rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-ges-green transition-colors duration-300">
+        <i [class]="'fas ' + icon + ' text-ges-green text-2xl group-hover:text-white transition-colors duration-300'"></i>
       </div>
-      <h3 class="text-xl font-bold text-ges-dark mb-3">{{ title }}</h3>
-      <p class="text-gray-600 flex-grow">{{ description }}</p>
+      <h3 class="text-lg font-bold text-ges-dark mb-3">{{ title }}</h3>
+      <p class="text-sm text-ges-gray grow leading-relaxed">{{ description }}</p>
     </div>
   `
 })

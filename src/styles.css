@@ -1,22 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+/* Font imports moved to index.html to avoid Tailwind 4 @import order issues */
 
 /* Tailwind 4 Theme Configuration */
 @theme {
-  --color-ges-blue: #455A64;
-  --color-ges-green: #8BC34A;
-  --color-ges-dark: #2C3E50;
-  --color-ges-light: #ECEFF1;
+  --color-ges-blue: #2D3E50;
+  --color-ges-green: #7AC143;
+  --color-ges-dark: #1A2332;
+  --color-ges-light: #F4F7FA;
+  --color-ges-navy: #243447;
+  --color-ges-green-light: #E8F5D9;
+  --color-ges-gray: #64748B;
 }
 
-/* Color Variables (CSS Variables pour compatibilité) */
+/* Color Variables */
 :root {
-  --primary: #455A64;
-  --secondary: #8BC34A;
-  --dark: #2C3E50;
-  --light: #ECEFF1;
+  --primary: #2D3E50;
+  --secondary: #7AC143;
+  --dark: #1A2332;
+  --light: #F4F7FA;
+  --navy: #243447;
   --white: #FFFFFF;
 }
 
@@ -25,6 +29,9 @@ body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
+  color: #1A2332;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
@@ -33,17 +40,17 @@ html {
 
 /* Hero Gradient */
 .hero-gradient {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+  background: linear-gradient(160deg, #1A2332 0%, #2D3E50 50%, #243447 100%);
 }
 
 /* Card Hover Effect */
 .card-hover {
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .card-hover:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(26, 35, 50, 0.12);
 }
 
 /* Process Step Connector */
@@ -54,11 +61,11 @@ html {
 .process-step:not(:last-child)::after {
   content: '';
   position: absolute;
-  top: 40px;
+  top: 32px;
   left: 50%;
   width: 100%;
   height: 2px;
-  background: var(--secondary);
+  background: linear-gradient(90deg, #7AC143, #7AC14366);
   z-index: -1;
 }
 
@@ -66,4 +73,61 @@ html {
   .process-step::after {
     display: none;
   }
+}
+
+/* Subtle fade-in animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+/* Gradient text helper */
+.gradient-text {
+  background: linear-gradient(135deg, #7AC143, #5DA832);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section divider */
+.section-divider {
+  width: 64px;
+  height: 4px;
+  background: linear-gradient(90deg, #7AC143, #2D3E50);
+  border-radius: 2px;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Smooth button transitions */
+.btn-primary {
+  background: #7AC143;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #6AB338;
+  box-shadow: 0 8px 24px rgba(122, 193, 67, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  border-color: #7AC143;
+  background: rgba(122, 193, 67, 0.1);
 }
