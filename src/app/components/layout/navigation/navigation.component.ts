@@ -49,13 +49,13 @@ import { LogoComponent } from '../../shared/logo/logo.component';
         <div class="px-4 py-6 space-y-1">
           <a *ngFor="let link of navLinks"
              [href]="link.href"
-             (click)="mobileMenuOpen = false"
+             (click)="navigateTo($event, link.href)"
              class="block px-4 py-3 rounded-lg text-ges-dark hover:bg-ges-light hover:text-ges-green font-medium transition-colors">
             {{ link.label }}
           </a>
           <div class="pt-4 border-t border-gray-100">
             <a href="#contact"
-               (click)="mobileMenuOpen = false"
+               (click)="navigateTo($event, '#contact')"
                class="block w-full text-center btn-primary px-6 py-3 rounded-lg font-semibold">
               Demander une étude
             </a>
@@ -88,5 +88,19 @@ export class NavigationComponent {
 
   toggleMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  navigateTo(event: Event, href: string) {
+    event.preventDefault();
+    this.mobileMenuOpen = false;
+    const targetId = href.replace('#', '');
+    if (!targetId) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }

@@ -34,7 +34,28 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
+/* Ensure Angular components are block-level */
+app-root,
+app-home,
+app-navigation,
+app-hero,
+app-trust-bar,
+app-services-section,
+app-features-section,
+app-method-section,
+app-projects-section,
+app-contact-section,
+app-cta-section,
+app-footer {
+  display: block;
+}
+
+html,
+body {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
   scroll-behavior: smooth;
 }
 

@@ -8,7 +8,9 @@ import { LogoComponent } from '../../shared/logo/logo.component';
   standalone: true,
   imports: [CommonModule, LogoComponent, RouterLink],
   template: `
-    <footer class="bg-ges-dark text-white">
+    <footer class="bg-[#141B27] text-white">
+      <!-- Green accent separator -->
+      <div class="h-1 bg-linear-to-r from-ges-green via-ges-green/60 to-transparent"></div>
       <!-- Main footer -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">

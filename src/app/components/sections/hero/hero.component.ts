@@ -18,52 +18,52 @@ import { CommonModule } from '@angular/common';
         <div class="absolute top-1/3 left-1/3 w-1.5 h-1.5 bg-white/20 rounded-full"></div>
       </div>
 
-      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+      <div class="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-28 sm:pt-32 pb-16 sm:pb-20">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
           <!-- Texte -->
-          <div class="text-white animate-fade-in-up">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-medium text-ges-green mb-8">
-              <span class="w-2 h-2 bg-ges-green rounded-full animate-pulse"></span>
-              Bureau d'études premium — Afrique &middot; Europe &middot; MENA
+          <div class="text-white animate-fade-in-up text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full glass text-xs sm:text-sm font-medium text-ges-green mb-6 sm:mb-8 mx-auto lg:mx-0">
+              <span class="w-2 h-2 bg-ges-green rounded-full animate-pulse shrink-0"></span>
+              <span>Bureau d'études — Afrique &middot; Europe &middot; MENA</span>
             </div>
 
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6">
+            <h1 class="text-[1.7rem] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.15] mb-5 sm:mb-6">
               Accélérateur de la
               <span class="gradient-text"> transition énergétique</span>
               intelligente
             </h1>
 
-            <p class="text-lg md:text-xl text-white/70 mb-10 max-w-xl leading-relaxed">
+            <p class="text-base sm:text-lg md:text-xl text-white/70 mb-8 sm:mb-10 max-w-xl leading-relaxed mx-auto lg:mx-0">
               Ingénierie ENR, BIM et Smart Building — de la stratégie à l'exploitation.
               Des livrables fiables, conformes et orientés performance.
             </p>
 
-            <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 justify-center lg:justify-start">
               <a href="#contact"
-                 class="btn-primary px-8 py-4 rounded-xl font-semibold text-center text-lg inline-flex items-center justify-center gap-2">
+                 class="btn-primary px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-center text-base sm:text-lg inline-flex items-center justify-center gap-2">
                 Demander une étude
                 <i class="fas fa-arrow-right text-sm"></i>
               </a>
               <a href="#services"
-                 class="btn-outline px-8 py-4 rounded-xl font-semibold text-center text-lg inline-flex items-center justify-center gap-2">
+                 class="btn-outline px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-center text-base sm:text-lg inline-flex items-center justify-center gap-2">
                 Découvrir nos expertises
               </a>
             </div>
 
-            <div class="flex items-center gap-8 pt-4 border-t border-white/10">
+            <div class="flex items-center gap-5 sm:gap-8 pt-4 border-t border-white/10 justify-center lg:justify-start">
               <div>
-                <div class="text-2xl font-bold text-white">5+</div>
-                <div class="text-xs text-white/50 uppercase tracking-wider">Expertises</div>
+                <div class="text-xl sm:text-2xl font-bold text-white">5+</div>
+                <div class="text-[0.65rem] sm:text-xs text-white/50 uppercase tracking-wider">Expertises</div>
               </div>
-              <div class="w-px h-10 bg-white/10"></div>
+              <div class="w-px h-8 sm:h-10 bg-white/10"></div>
               <div>
-                <div class="text-2xl font-bold text-white">3</div>
-                <div class="text-xs text-white/50 uppercase tracking-wider">Continents</div>
+                <div class="text-xl sm:text-2xl font-bold text-white">3</div>
+                <div class="text-[0.65rem] sm:text-xs text-white/50 uppercase tracking-wider">Continents</div>
               </div>
-              <div class="w-px h-10 bg-white/10"></div>
+              <div class="w-px h-8 sm:h-10 bg-white/10"></div>
               <div>
-                <div class="text-2xl font-bold text-ges-green">100%</div>
-                <div class="text-xs text-white/50 uppercase tracking-wider">Indépendant</div>
+                <div class="text-xl sm:text-2xl font-bold text-ges-green">100%</div>
+                <div class="text-[0.65rem] sm:text-xs text-white/50 uppercase tracking-wider">Indépendant</div>
               </div>
             </div>
           </div>
