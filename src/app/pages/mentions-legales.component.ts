@@ -36,14 +36,14 @@ import { LogoComponent } from '../components/shared/logo/logo.component';
                 Le présent site est la propriété de <strong>GES Africa</strong>
               </p>
               <ul class="list-disc pl-6 space-y-2">
-                <li><strong>Forme juridique</strong> : [À compléter]</li>
-                <li><strong>Siège social</strong> : [À compléter]</li>
-                <li><strong>SIRET</strong> : [À compléter]</li>
+                <li><strong>Forme juridique</strong> : SARL </li>
+                <li><strong>Siège social</strong> : Quartier Industrile Sidi Ghanem - 158, 1ER Etage, Bureau 44 - Marrakech</li>
+                <li><strong>SIRET - ICE </strong> : 003631837000029</li>
                 <li><strong>Email</strong> : direction@ges-africa.com</li>
-                <li><strong>Téléphone</strong> : [À compléter]</li>
+                <li><strong>Téléphone</strong> : +33 7 84 45 94 68</li>
               </ul>
               <p class="mt-4">
-                <strong>Directeur de la publication</strong> : [Nom et Fonction]
+                <strong>Directeur de la publication</strong> : Dinar Abdelkrim
               </p>
               <p class="mt-2">
                 Toute reproduction même partielle est interdite sans autorisation préalable.
@@ -63,8 +63,9 @@ import { LogoComponent } from '../components/shared/logo/logo.component';
                 </div>
                 <div>
                   <h3 class="font-semibold text-lg text-ges-dark">Hébergement :</h3>
-                  <p>[Nom de l'hébergeur]</p>
-                  <p>[Adresse de l'hébergeur]</p>
+                  <p>Hostinger UAB</p>
+                  <p>Gedimino pr. 11 - 01103 Vilnius - Lituanie</p>
+                  <p>https://www.hostinger.fr</p>
                 </div>
               </div>
             </section>
@@ -149,4 +150,4 @@ import { LogoComponent } from '../components/shared/logo/logo.component';
     </div>
   `
 })
-export class MentionsLegalesComponent {}
+export class MentionsLegalesComponent { }
