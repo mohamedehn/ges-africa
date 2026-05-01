@@ -39,7 +39,7 @@ import { LogoComponent } from '../components/shared/logo/logo.component';
                 <li><strong>Forme juridique</strong> : SARL </li>
                 <li><strong>Siège social</strong> : Quartier Industrile Sidi Ghanem - 158, 1ER Etage, Bureau 44 - Marrakech</li>
                 <li><strong>SIRET - ICE </strong> : 003631837000029</li>
-                <li><strong>Email</strong> : direction@ges-africa.com</li>
+                <li><strong>Email</strong> : direction@gesafrica.com</li>
                 <li><strong>Téléphone</strong> : +33 7 84 45 94 68</li>
               </ul>
               <p class="mt-4">
@@ -56,10 +56,8 @@ import { LogoComponent } from '../components/shared/logo/logo.component';
               <div class="space-y-4">
                 <div>
                   <h3 class="font-semibold text-lg text-ges-dark">Création / Conception / Développement :</h3>
-                  <p>[Nom de l'entreprise de développement]</p>
-                  <p>SIRET : [À compléter]</p>
-                  <p>Email : [À compléter]</p>
-                  <p>Web : [À compléter]</p>
+                  <p>Mohamed E</p>
+                  <p>Web : https://mohamedehn.github.io/new-portfolio/</p>
                 </div>
                 <div>
                   <h3 class="font-semibold text-lg text-ges-dark">Hébergement :</h3>
@@ -91,7 +89,7 @@ import { LogoComponent } from '../components/shared/logo/logo.component';
               </p>
               <p class="mt-4">
                 Pour exercer ces droits, vous pouvez nous contacter à l'adresse :
-                <a href="mailto:direction@ges-africa.com" class="text-ges-green hover:underline">direction@ges-africa.com</a>
+                <a href="mailto:direction@gesafrica.com" class="text-ges-green hover:underline">direction@gesafrica.com</a>
               </p>
               <p class="mt-4">
                 Pour plus d'informations, consultez notre

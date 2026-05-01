@@ -27,8 +27,8 @@ import { FormsModule } from '@angular/forms';
                 </div>
                 <div>
                   <h3 class="text-sm font-bold text-ges-dark mb-1">Email</h3>
-                  <a href="mailto:direction@ges-africa.com" class="text-sm text-ges-gray hover:text-ges-green transition">
-                    direction&#64;ges-africa.com
+                  <a href="mailto:direction@gesafrica.com" class="text-sm text-ges-gray hover:text-ges-green transition">
+                    direction&#64;gesafrica.com
                   </a>
                 </div>
               </div>
@@ -203,7 +203,7 @@ import { FormsModule } from '@angular/forms';
 
                 <div *ngIf="submitStatus === 'error'" class="mt-5 p-4 bg-red-50 border border-red-200 text-red-600 rounded-xl text-center text-sm">
                   <i class="fas fa-exclamation-circle mr-2"></i>
-                  Erreur survenue. Réessayez ou écrivez à direction&#64;ges-africa.com
+                  Erreur survenue. Réessayez ou écrivez à direction&#64;gesafrica.com
                 </div>
               </form>
             </div>

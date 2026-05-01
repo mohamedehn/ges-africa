@@ -198,7 +198,7 @@ import { LogoComponent } from '../components/shared/logo/logo.component';
                 Pour toute question relative à l'utilisation des cookies sur notre site, vous pouvez nous contacter à :
               </p>
               <p class="mt-4">
-                <strong>Email</strong> : <a href="mailto:direction@ges-africa.com" class="text-ges-green hover:underline">direction@ges-africa.com</a>
+                <strong>Email</strong> : <a href="mailto:direction@gesafrica.com" class="text-ges-green hover:underline">direction@gesafrica.com</a>
               </p>
             </section>
           </div>

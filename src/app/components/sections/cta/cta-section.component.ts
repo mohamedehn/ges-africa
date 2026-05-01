@@ -35,7 +35,7 @@ import { CommonModule } from '@angular/common';
             Demander une étude gratuite
             <i class="fas fa-arrow-right text-sm"></i>
           </a>
-          <a href="mailto:direction@ges-africa.com" class="btn-outline px-10 py-4 rounded-xl font-semibold text-lg inline-flex items-center justify-center gap-2">
+          <a href="mailto:direction@gesafrica.com" class="btn-outline px-10 py-4 rounded-xl font-semibold text-lg inline-flex items-center justify-center gap-2">
             <i class="fas fa-envelope text-sm"></i>
             Nous écrire
           </a>

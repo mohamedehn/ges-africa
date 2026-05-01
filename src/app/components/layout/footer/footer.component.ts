@@ -62,7 +62,7 @@ import { LogoComponent } from '../../shared/logo/logo.component';
                   <i class="fas fa-envelope text-ges-green text-xs"></i>
                 </div>
                 <div>
-                  <p class="text-sm text-white/50">direction&#64;ges-africa.com</p>
+                  <p class="text-sm text-white/50">direction&#64;gesafrica.com</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
