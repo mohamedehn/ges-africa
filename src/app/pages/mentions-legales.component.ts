@@ -15,7 +15,7 @@ import { LogoComponent } from '../components/shared/logo/logo.component';
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between items-center h-20">
             <a [routerLink]="['/']">
-              <app-logo size="medium"></app-logo>
+              <app-logo size="small"></app-logo>
             </a>
             <a [routerLink]="['/']" class="bg-ges-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition">
               Retour à l'accueil

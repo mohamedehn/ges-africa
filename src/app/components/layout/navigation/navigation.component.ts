@@ -12,7 +12,7 @@ import { MagneticDirective } from '../../../shared/directives/motion.directives'
       <nav class="nav-pill pointer-events-auto relative w-full rounded-2xl transition-all duration-700"
            [class.nav-scrolled]="scrolled"
            [class]="scrolled ? 'max-w-5xl' : 'max-w-7xl'">
-        <div class="flex justify-between items-center h-16 px-4 sm:px-6">
+        <div class="flex justify-between items-center h-[4.75rem] px-4 sm:px-6">
           <app-logo size="medium" theme="dark"></app-logo>
 
           <!-- Menu Desktop -->
