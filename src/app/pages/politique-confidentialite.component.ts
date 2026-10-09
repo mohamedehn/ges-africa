@@ -44,10 +44,10 @@ import { LogoComponent } from '../components/shared/logo/logo.component';
               <p>
                 GES Africa est responsable du traitement au sens du Règlement (UE) 2016/679 dit Règlement Général
                 sur la Protection des Données ou « RGPD », pour la collecte et le traitement des données à caractère
-                personnel effectuées sur le site accessible à l'adresse URL : [URL du site]
+                personnel effectuées sur le site accessible à l'adresse URL : www.gesafrica.com
               </p>
               <p class="mt-4">
-                <strong>Contact</strong> : direction@ges-africa.com
+                <strong>Contact</strong> : <a href="mailto:direction@gesafrica.com" class="text-ges-green hover:underline">direction@gesafrica.com</a>
               </p>
             </section>
 
@@ -134,8 +134,8 @@ import { LogoComponent } from '../components/shared/logo/logo.component';
               </ul>
               <p class="mt-6">
                 <strong>Pour exercer vos droits, contactez-nous à :</strong><br/>
-                Email : <a href="mailto:direction@ges-africa.com" class="text-ges-green hover:underline">direction@ges-africa.com</a><br/>
-                Adresse : [Adresse postale]
+                Email : <a href="mailto:direction@gesafrica.com" class="text-ges-green hover:underline">direction@gesafrica.com</a><br/>
+                Adresse : Quartier Industrile Sidi Ghanem - 158, 1ER Etage, Bureau 44 - Marrakech
               </p>
               <p class="mt-4">
                 Vous disposez également du droit d'introduire une réclamation auprès de la CNIL
@@ -177,8 +177,8 @@ import { LogoComponent } from '../components/shared/logo/logo.component';
                 personnelles, vous pouvez nous contacter à :
               </p>
               <p class="mt-4">
-                <strong>Email</strong> : <a href="mailto:direction@ges-africa.com" class="text-ges-green hover:underline">direction@ges-africa.com</a><br/>
-                <strong>Adresse</strong> : [Adresse postale]<br/>
+                <strong>Email</strong> : <a href="mailto:direction@gesafrica.com" class="text-ges-green hover:underline">direction@gesafrica.com</a><br/>
+                <strong>Adresse</strong> : Quartier Industrile Sidi Ghanem - 158, 1ER Etage, Bureau 44 - Marrakech<br/>
                 <strong>Zone d'intervention</strong> : Afrique – Europe – MENA
               </p>
             </section>
