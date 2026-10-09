@@ -123,9 +123,13 @@ import {
                 <div class="absolute -inset-3 bg-ges-green/20 rounded-4xl blur-2xl"></div>
                 <div class="relative overflow-hidden rounded-4xl border border-white/15 shadow-2xl aspect-4/5">
                   <img appParallax="0.06"
-                       src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80"
-                       alt="Panneaux solaires en Afrique"
-                       class="absolute -top-[8%] left-0 w-full h-[116%] object-cover">
+                       src="/images/centrale-solaire-hero-1600.jpg"
+                       srcset="/images/centrale-solaire-hero-1600.jpg 1600w, /images/centrale-solaire-hero.jpg 3840w"
+                       sizes="1100px"
+                       fetchpriority="high"
+                       width="3840" height="2558"
+                       alt="Vue aérienne d'une centrale solaire photovoltaïque au lever du jour"
+                       class="absolute -top-[8%] left-0 w-full h-[116%] object-cover object-[58%_50%]">
                   <div class="absolute inset-0 bg-linear-to-t from-ges-dark/70 via-transparent to-ges-dark/10"></div>
                 </div>
 

@@ -9,7 +9,9 @@ import { CounterDirective, ParallaxDirective, TiltDirective } from '../../../sha
   template: `
     <div appTilt="4" class="h-full">
       <article class="relative overflow-hidden rounded-3xl h-120 md:h-136 group bg-ges-dark shadow-xl hover:shadow-2xl hover:shadow-ges-green/10 transition-shadow duration-500">
-        <img appParallax="0.07" [src]="imageUrl" [alt]="title"
+        <img appParallax="0.07" [src]="imageSmall || imageUrl" [alt]="title"
+             [attr.srcset]="imageSmall ? imageSmall + ' 1400w, ' + imageUrl + ' ' + fullWidth + 'w' : null"
+             sizes="(min-width: 768px) 1200px, 100vw" loading="lazy" decoding="async"
              class="absolute -top-[10%] left-0 w-full h-[120%] object-cover transition-transform duration-1200 ease-out group-hover:scale-110">
         <div class="absolute inset-0 bg-linear-to-t from-ges-dark via-ges-dark/55 to-ges-dark/5"></div>
         <div class="absolute inset-0 bg-ges-green/0 group-hover:bg-ges-green/10 transition-colors duration-700"></div>
@@ -40,7 +42,12 @@ import { CounterDirective, ParallaxDirective, TiltDirective } from '../../../sha
   host: { class: 'block h-full' }
 })
 export class ProjectCardComponent {
+  /** Version 4K (ou pleine résolution) de l'image */
   @Input() imageUrl!: string;
+  /** Version légère (1400 px de large) servie aux écrans standards */
+  @Input() imageSmall?: string;
+  /** Largeur en pixels de la version pleine résolution (pour le srcset) */
+  @Input() fullWidth = 3840;
   @Input() title!: string;
   @Input() description!: string;
   @Input() tags!: string[];

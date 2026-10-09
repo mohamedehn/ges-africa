@@ -5,6 +5,8 @@ import { RevealDirective } from '../../../shared/directives/motion.directives';
 
 interface Project {
   imageUrl: string;
+  imageSmall?: string;
+  fullWidth?: number;
   title: string;
   description: string;
   tags: string[];
@@ -40,6 +42,8 @@ interface Project {
             appReveal [revealDelay]="(i % 2) * 150"
             [class]="i % 2 ? 'md:mt-16' : ''"
             [imageUrl]="project.imageUrl"
+            [imageSmall]="project.imageSmall"
+            [fullWidth]="project.fullWidth ?? 3840"
             [title]="project.title"
             [description]="project.description"
             [tags]="project.tags"
@@ -54,7 +58,8 @@ interface Project {
 export class ProjectsSectionComponent {
   projects: Project[] = [
     {
-      imageUrl: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80',
+      imageUrl: '/images/ombriere-pv.jpg',
+      imageSmall: '/images/ombriere-pv-1400.jpg',
       title: 'PV toitures & ombrières',
       description: 'Centrales de 100 kWc à multi-MW — études complètes de la faisabilité à l\'exploitation.',
       tags: ['Faisabilité', 'Dimensionnement', 'ROI'],
@@ -62,7 +67,8 @@ export class ProjectsSectionComponent {
       metricLabel: 'Puissance'
     },
     {
-      imageUrl: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&q=80',
+      imageUrl: '/images/industrie-logistique.jpg',
+      imageSmall: '/images/industrie-logistique-1400.jpg',
       title: 'Industrie & logistique',
       description: 'Autoconsommation solaire intégrée aux contraintes process industriels.',
       tags: ['Autoconsommation', 'Process', 'Optimisation'],
@@ -70,7 +76,9 @@ export class ProjectsSectionComponent {
       metricLabel: 'Économies'
     },
     {
-      imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
+      imageUrl: '/images/smart-building.jpg',
+      imageSmall: '/images/smart-building-1400.jpg',
+      fullWidth: 2880,
       title: 'Smart building tertiaire',
       description: 'GTB, confort thermique, pilotage intelligent et sobriété énergétique.',
       tags: ['GTB/GTC', 'BIM MEP', 'Confort'],
@@ -78,7 +86,8 @@ export class ProjectsSectionComponent {
       metricLabel: 'Gain énergie'
     },
     {
-      imageUrl: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&q=80',
+      imageUrl: '/images/irve-hub.jpg',
+      imageSmall: '/images/irve-hub-1400.jpg',
       title: 'Infrastructure IRVE',
       description: 'Hubs de recharge AC/DC avec pilotage intelligent et intégration ENR.',
       tags: ['Smart charging', 'Intégration PV', 'Réseau'],
