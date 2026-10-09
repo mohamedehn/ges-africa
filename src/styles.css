@@ -272,3 +272,7 @@ html, body {
   transform-origin: 0 0;
   animation: spin-slow var(--spin, 14s) linear infinite;
 }
+
+/* Zoom lent façon « cinéma » sur la photo du hero (propriété `scale`, compatible avec la parallaxe) */
+@keyframes kenburns { from { scale: 1; } to { scale: 1.09; } }
+.animate-kenburns { animation: kenburns 26s ease-in-out infinite alternate; transform-origin: 60% 50%; }

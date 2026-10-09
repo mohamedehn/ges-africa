@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EnergyCanvasComponent } from '../../shared/energy-canvas/energy-canvas.component';
 import {
-  CounterDirective, MagneticDirective, ParallaxDirective, RevealDirective, TiltDirective
+  CounterDirective, MagneticDirective, ParallaxDirective, RevealDirective
 } from '../../../shared/directives/motion.directives';
 
 @Component({
@@ -10,7 +10,7 @@ import {
   standalone: true,
   imports: [
     CommonModule, EnergyCanvasComponent, RevealDirective, CounterDirective,
-    MagneticDirective, TiltDirective, ParallaxDirective
+    MagneticDirective, ParallaxDirective
   ],
   template: `
     <section class="bg-grain relative min-h-screen flex items-center overflow-hidden text-white">
@@ -19,6 +19,23 @@ import {
       <div class="absolute inset-0 bg-grid"></div>
       <div class="absolute -top-32 -right-32 w-136 h-136 bg-ges-green/15 rounded-full blur-[120px] animate-float-slow"></div>
       <div class="absolute -bottom-40 -left-32 w-120 h-120 bg-ges-blue/60 rounded-full blur-[120px] animate-float-slow-rev"></div>
+      <!-- Photo plein format, fondue dans le fond sombre -->
+      <div appReveal [revealDelay]="150" class="absolute inset-y-0 right-0 w-full lg:w-[74%]">
+        <div class="absolute inset-0 overflow-hidden opacity-35 lg:opacity-100"
+             style="-webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.28) 30%, #000 64%); mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.28) 30%, #000 64%)">
+          <img appParallax="0.05"
+               src="/images/centrale-solaire-hero-1600.jpg"
+               srcset="/images/centrale-solaire-hero-1600.jpg 1600w, /images/centrale-solaire-hero.jpg 3840w"
+               sizes="(min-width: 1024px) 1100px, 100vw"
+               fetchpriority="high"
+               width="3840" height="2558"
+               alt="Vue aérienne d'une centrale solaire photovoltaïque au lever du jour"
+               class="animate-kenburns absolute -top-[6%] left-0 w-full h-[112%] object-cover object-[64%_50%]">
+        <div class="absolute inset-x-0 top-0 h-48 bg-linear-to-b from-ges-dark/70 to-transparent"></div>
+        <div class="absolute inset-x-0 bottom-0 h-64 bg-linear-to-t from-ges-dark via-ges-dark/60 to-transparent"></div>
+        </div>
+      </div>
+
       <app-energy-canvas></app-energy-canvas>
 
       <!-- Éoliennes à l'horizon -->
@@ -106,52 +123,25 @@ import {
             </div>
           </div>
 
-          <!-- Visuel -->
-          <div class="hidden lg:block lg:col-span-5" appReveal="right" [revealDelay]="300">
-            <div class="relative">
-              <!-- Anneaux orbitaux -->
-              <svg class="absolute -inset-16 w-[calc(100%+8rem)] h-[calc(100%+8rem)] animate-spin-slow opacity-60" viewBox="0 0 400 400" fill="none">
-                <circle cx="200" cy="200" r="190" stroke="#7AC143" stroke-opacity=".25" stroke-dasharray="2 10"/>
-                <circle cx="200" cy="10" r="5" fill="#7AC143"/>
-              </svg>
-              <svg class="absolute -inset-8 w-[calc(100%+4rem)] h-[calc(100%+4rem)] animate-spin-slower opacity-50" viewBox="0 0 400 400" fill="none">
-                <circle cx="200" cy="200" r="190" stroke="white" stroke-opacity=".12"/>
-                <circle cx="390" cy="200" r="4" fill="white"/>
-              </svg>
+        </div>
+      </div>
 
-              <div appTilt="7" class="relative">
-                <div class="absolute -inset-3 bg-ges-green/20 rounded-4xl blur-2xl"></div>
-                <div class="relative overflow-hidden rounded-4xl border border-white/15 shadow-2xl aspect-4/5">
-                  <img appParallax="0.06"
-                       src="/images/centrale-solaire-hero-1600.jpg"
-                       srcset="/images/centrale-solaire-hero-1600.jpg 1600w, /images/centrale-solaire-hero.jpg 3840w"
-                       sizes="1100px"
-                       fetchpriority="high"
-                       width="3840" height="2558"
-                       alt="Vue aérienne d'une centrale solaire photovoltaïque au lever du jour"
-                       class="absolute -top-[8%] left-0 w-full h-[116%] object-cover object-[58%_50%]">
-                  <div class="absolute inset-0 bg-linear-to-t from-ges-dark/70 via-transparent to-ges-dark/10"></div>
-                </div>
-
-                <!-- Carte flottante -->
-                <div class="absolute -bottom-7 -left-10 glass rounded-2xl p-4 text-white animate-float-y shadow-2xl">
-                  <div class="flex items-center gap-3">
-                    <div class="w-11 h-11 bg-ges-green/20 rounded-xl flex items-center justify-center">
-                      <i class="fas fa-bolt text-ges-green"></i>
-                    </div>
-                    <div>
-                      <div class="text-sm font-bold">Performance prouvable</div>
-                      <div class="text-xs text-white/60">kWh, ROI, M&V</div>
-                    </div>
-                    <div class="flex items-end gap-0.5 h-8 ml-2">
-                      <span class="eq-bar w-1 h-full bg-ges-green rounded-full" style="animation-delay:0s"></span>
-                      <span class="eq-bar w-1 h-full bg-ges-green rounded-full" style="animation-delay:.25s"></span>
-                      <span class="eq-bar w-1 h-full bg-ges-green rounded-full" style="animation-delay:.5s"></span>
-                      <span class="eq-bar w-1 h-full bg-ges-green rounded-full" style="animation-delay:.75s"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <!-- Carte flottante -->
+      <div appReveal="scale" [revealDelay]="900" class="hidden lg:block absolute bottom-32 right-10 xl:right-20 z-10">
+        <div class="glass rounded-2xl p-4 text-white animate-float-y shadow-2xl" style="background: rgba(26,35,50,.68)">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 bg-ges-green/20 rounded-xl flex items-center justify-center">
+              <i class="fas fa-bolt text-ges-green"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold">Performance prouvable</div>
+              <div class="text-xs text-white/60">kWh, ROI, M&V</div>
+            </div>
+            <div class="flex items-end gap-0.5 h-8 ml-2">
+              <span class="eq-bar w-1 h-full bg-ges-green rounded-full" style="animation-delay:0s"></span>
+              <span class="eq-bar w-1 h-full bg-ges-green rounded-full" style="animation-delay:.25s"></span>
+              <span class="eq-bar w-1 h-full bg-ges-green rounded-full" style="animation-delay:.5s"></span>
+              <span class="eq-bar w-1 h-full bg-ges-green rounded-full" style="animation-delay:.75s"></span>
             </div>
           </div>
         </div>

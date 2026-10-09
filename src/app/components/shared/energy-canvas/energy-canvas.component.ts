@@ -14,7 +14,7 @@ interface Particle { x: number; y: number; px: number; py: number; speed: number
   host: { class: 'absolute inset-0 block pointer-events-none overflow-hidden' },
   template: `
     <!-- Soleil -->
-    <div *ngIf="sun" class="absolute -top-24 -right-24 w-md h-112 md:top-[55%] md:right-auto md:left-[75%] md:-translate-x-1/2 md:-translate-y-1/2 md:w-176 md:h-176">
+    <div *ngIf="sun" class="absolute -top-36 -right-36 w-md h-112 md:-top-56 md:-right-52 md:w-176 md:h-176">
       <div class="absolute inset-0 rounded-full animate-sun-pulse"
            style="background: radial-gradient(circle, rgba(200,240,150,.38) 0%, rgba(122,193,67,.16) 28%, transparent 62%)"></div>
       <svg class="absolute inset-0 w-full h-full animate-spin-slower" viewBox="-100 -100 200 200" fill="none">
