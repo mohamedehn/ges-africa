@@ -1,69 +1,74 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RevealDirective } from '../../../shared/directives/motion.directives';
 
 @Component({
   selector: 'app-contact-section',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RevealDirective],
   template: `
-    <section id="contact" class="py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-5 gap-12">
+    <section id="contact" class="py-28 md:py-36 bg-ges-dark text-white relative overflow-hidden">
+      <div class="absolute inset-0 bg-grid opacity-50"></div>
+      <div class="absolute top-0 left-0 w-[30rem] h-[30rem] bg-ges-green/10 rounded-full blur-[130px] animate-float-slow"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
           <!-- Left info panel -->
-          <div class="lg:col-span-2">
-            <div class="section-divider mb-6"></div>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-ges-dark mb-4">
-              Parlons de votre projet
+          <div class="lg:col-span-2" appReveal="left">
+            <div class="inline-flex items-center gap-3 text-ges-green text-xs font-semibold uppercase tracking-[0.25em] mb-6">
+              <span class="w-10 h-px bg-ges-green"></span> Contact
+            </div>
+            <h2 class="font-display text-4xl md:text-6xl font-bold tracking-tight leading-[1.05] mb-6">
+              Parlons de votre <span class="gradient-text">projet</span>
             </h2>
-            <p class="text-ges-gray leading-relaxed mb-10">
+            <p class="text-white/60 leading-relaxed mb-10">
               Décrivez votre projet et nous vous répondrons sous 48h avec un cadrage technique et les livrables attendus.
             </p>
 
             <div class="space-y-6">
               <div class="flex items-start gap-4">
-                <div class="w-12 h-12 bg-ges-green/10 rounded-xl flex items-center justify-center shrink-0">
+                <div class="w-12 h-12 bg-ges-green/10 border border-ges-green/20 rounded-xl flex items-center justify-center shrink-0">
                   <i class="fas fa-envelope text-ges-green"></i>
                 </div>
                 <div>
-                  <h3 class="text-sm font-bold text-ges-dark mb-1">Email</h3>
-                  <a href="mailto:direction@gesafrica.com" class="text-sm text-ges-gray hover:text-ges-green transition">
+                  <h3 class="text-sm font-bold text-white mb-1">Email</h3>
+                  <a href="mailto:direction@gesafrica.com" class="text-sm text-white/60 hover:text-ges-green transition">
                     direction&#64;gesafrica.com
                   </a>
                 </div>
               </div>
 
               <div class="flex items-start gap-4">
-                <div class="w-12 h-12 bg-ges-green/10 rounded-xl flex items-center justify-center shrink-0">
+                <div class="w-12 h-12 bg-ges-green/10 border border-ges-green/20 rounded-xl flex items-center justify-center shrink-0">
                   <i class="fas fa-map-marker-alt text-ges-green"></i>
                 </div>
                 <div>
-                  <h3 class="text-sm font-bold text-ges-dark mb-1">Zones d'intervention</h3>
-                  <p class="text-sm text-ges-gray">Afrique &middot; Europe &middot; MENA</p>
+                  <h3 class="text-sm font-bold text-white mb-1">Zones d'intervention</h3>
+                  <p class="text-sm text-white/60">Afrique &middot; Europe &middot; MENA</p>
                 </div>
               </div>
 
               <div class="flex items-start gap-4">
-                <div class="w-12 h-12 bg-ges-green/10 rounded-xl flex items-center justify-center shrink-0">
+                <div class="w-12 h-12 bg-ges-green/10 border border-ges-green/20 rounded-xl flex items-center justify-center shrink-0">
                   <i class="fas fa-clock text-ges-green"></i>
                 </div>
                 <div>
-                  <h3 class="text-sm font-bold text-ges-dark mb-1">Temps de réponse</h3>
-                  <p class="text-sm text-ges-gray">Sous 24-48h ouvrées</p>
+                  <h3 class="text-sm font-bold text-white mb-1">Temps de réponse</h3>
+                  <p class="text-sm text-white/60">Sous 24-48h ouvrées</p>
                 </div>
               </div>
             </div>
 
             <div class="mt-10 flex gap-4">
-              <a href="#" class="w-10 h-10 bg-ges-dark rounded-lg flex items-center justify-center text-white hover:bg-ges-green transition-colors">
+              <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-ges-green hover:text-ges-dark transition-colors">
                 <i class="fab fa-linkedin-in text-sm"></i>
               </a>
             </div>
           </div>
 
           <!-- Right form panel -->
-          <div class="lg:col-span-3">
-            <div class="bg-ges-light rounded-2xl p-8 md:p-10">
+          <div class="lg:col-span-3" appReveal="right" [revealDelay]="150">
+            <div class="bg-white text-ges-dark rounded-3xl p-8 md:p-10 shadow-2xl shadow-black/30 border border-white/10">
               <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
                 <div class="grid md:grid-cols-2 gap-5 mb-5">
                   <div>

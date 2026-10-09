@@ -1,0 +1,4 @@
+# Page citant l'agence de conception : ne jamais l'indexer (en-tête HTTP, en plus de la balise meta)
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow, noarchive"
+</IfModule>

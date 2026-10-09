@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectCardComponent } from '../../shared/project-card/project-card.component';
+import { RevealDirective } from '../../../shared/directives/motion.directives';
 
 interface Project {
   imageUrl: string;
@@ -14,23 +15,30 @@ interface Project {
 @Component({
   selector: 'app-projects-section',
   standalone: true,
-  imports: [CommonModule, ProjectCardComponent],
+  imports: [CommonModule, ProjectCardComponent, RevealDirective],
   template: `
-    <section id="realisations" class="py-24 bg-ges-light">
+    <section id="realisations" class="py-28 md:py-36 bg-ges-light relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <div class="section-divider mx-auto mb-6"></div>
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-ges-dark mb-5">
-            Typologies de missions
-          </h2>
-          <p class="text-lg text-ges-gray max-w-2xl mx-auto">
+        <div class="grid lg:grid-cols-12 gap-6 lg:gap-12 items-end mb-16 md:mb-20">
+          <div class="lg:col-span-8">
+            <div appReveal class="inline-flex items-center gap-3 text-ges-green text-xs font-semibold uppercase tracking-[0.25em] mb-6">
+              <span class="w-10 h-px bg-ges-green"></span> Réalisations
+            </div>
+            <h2 appReveal="lines" class="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-ges-dark tracking-tight leading-[1.05]">
+              <span class="line"><span style="--d:0">Typologies</span></span>
+              <span class="line"><span style="--d:1" class="gradient-text">de missions</span></span>
+            </h2>
+          </div>
+          <p appReveal [revealDelay]="250" class="lg:col-span-4 text-lg text-ges-gray leading-relaxed">
             Aperçu des projets types que nous réalisons pour nos clients à travers le continent.
           </p>
         </div>
 
-        <div class="grid sm:grid-cols-2 gap-8">
+        <div class="grid md:grid-cols-2 gap-6 md:gap-8">
           <app-project-card
-            *ngFor="let project of projects"
+            *ngFor="let project of projects; let i = index"
+            appReveal [revealDelay]="(i % 2) * 150"
+            [class]="i % 2 ? 'md:mt-16' : ''"
             [imageUrl]="project.imageUrl"
             [title]="project.title"
             [description]="project.description"

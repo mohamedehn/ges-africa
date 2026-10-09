@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FeatureCardComponent } from '../../shared/feature-card/feature-card.component';
+import { RevealDirective } from '../../../shared/directives/motion.directives';
 
 interface Feature {
   icon: string;
@@ -11,53 +12,41 @@ interface Feature {
 @Component({
   selector: 'app-features-section',
   standalone: true,
-  imports: [CommonModule, FeatureCardComponent],
+  imports: [CommonModule, FeatureCardComponent, RevealDirective],
   template: `
-    <section id="features" class="py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-          <!-- Left: text block -->
-          <div>
-            <div class="section-divider mb-6"></div>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-ges-dark mb-6 leading-tight">
-              Pourquoi choisir
-              <span class="gradient-text">GES Africa</span> ?
+    <section id="features" class="py-28 md:py-36 bg-ges-light relative overflow-hidden">
+      <div class="absolute -top-24 right-0 w-md h-112 bg-ges-green/10 rounded-full blur-[110px]"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-14 items-start">
+          <!-- Left: text block (sticky) -->
+          <div class="lg:col-span-5 lg:sticky lg:top-32">
+            <div appReveal class="inline-flex items-center gap-3 text-ges-green text-xs font-semibold uppercase tracking-[0.25em] mb-6">
+              <span class="w-10 h-px bg-ges-green"></span> Pourquoi nous
+            </div>
+            <h2 appReveal="lines" class="font-display text-4xl md:text-6xl font-bold text-ges-dark mb-8 leading-[1.05] tracking-tight">
+              <span class="line"><span style="--d:0">Pourquoi choisir</span></span>
+              <span class="line"><span style="--d:1" class="gradient-text">GES Africa</span> <span style="--d:1">?</span></span>
             </h2>
-            <p class="text-lg text-ges-gray leading-relaxed mb-8">
+            <p appReveal [revealDelay]="200" class="text-lg text-ges-gray leading-relaxed mb-10">
               Nous combinons expertise technique de pointe, connaissance du terrain africain et standards internationaux pour délivrer des projets qui performent réellement.
             </p>
-            <div class="grid grid-cols-2 gap-4">
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-ges-green/10 rounded-lg flex items-center justify-center shrink-0">
-                  <i class="fas fa-globe-africa text-ges-green text-sm"></i>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div *ngFor="let p of pillars; let i = index" appReveal [revealDelay]="300 + i * 90"
+                   class="flex items-center gap-3 bg-white rounded-2xl px-4 py-3.5 border border-gray-100 hover:border-ges-green/40 hover:shadow-lg transition-all duration-300">
+                <div class="w-9 h-9 bg-ges-green/10 rounded-xl flex items-center justify-center shrink-0">
+                  <i [class]="'fas ' + p.icon + ' text-ges-green text-sm'"></i>
                 </div>
-                <span class="text-sm font-medium text-ges-dark">Présence multi-continents</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-ges-green/10 rounded-lg flex items-center justify-center shrink-0">
-                  <i class="fas fa-handshake text-ges-green text-sm"></i>
-                </div>
-                <span class="text-sm font-medium text-ges-dark">Partenariats stratégiques</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-ges-green/10 rounded-lg flex items-center justify-center shrink-0">
-                  <i class="fas fa-award text-ges-green text-sm"></i>
-                </div>
-                <span class="text-sm font-medium text-ges-dark">Équipe certifiée</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-ges-green/10 rounded-lg flex items-center justify-center shrink-0">
-                  <i class="fas fa-cogs text-ges-green text-sm"></i>
-                </div>
-                <span class="text-sm font-medium text-ges-dark">Outils dernière génération</span>
+                <span class="text-sm font-semibold text-ges-dark">{{ p.label }}</span>
               </div>
             </div>
           </div>
 
           <!-- Right: feature cards grid -->
-          <div class="grid sm:grid-cols-2 gap-4">
+          <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4 md:gap-5">
             <app-feature-card
-              *ngFor="let feature of features"
+              *ngFor="let feature of features; let i = index"
+              appReveal [revealDelay]="(i % 2) * 120"
+              [class]="i % 2 ? 'sm:mt-12' : ''"
               [icon]="feature.icon"
               [title]="feature.title"
               [description]="feature.description">
@@ -69,6 +58,13 @@ interface Feature {
   `
 })
 export class FeaturesSectionComponent {
+  pillars = [
+    { icon: 'fa-globe-africa', label: 'Présence multi-continents' },
+    { icon: 'fa-handshake', label: 'Partenariats stratégiques' },
+    { icon: 'fa-award', label: 'Équipe certifiée' },
+    { icon: 'fa-cogs', label: 'Outils dernière génération' }
+  ];
+
   features: Feature[] = [
     {
       icon: 'fa-tachometer-alt',

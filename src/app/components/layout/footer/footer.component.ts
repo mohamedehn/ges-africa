@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { LogoComponent } from '../../shared/logo/logo.component';
+import { RevealDirective } from '../../../shared/directives/motion.directives';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, LogoComponent, RouterLink],
+  imports: [CommonModule, LogoComponent, RouterLink, RevealDirective],
   template: `
     <footer class="bg-[#141B27] text-white">
       <!-- Green accent separator -->
@@ -75,6 +76,15 @@ import { LogoComponent } from '../../shared/logo/logo.component';
               </li>
             </ul>
           </div>
+        </div>
+      </div>
+
+      <!-- Signature : logo en grand sur fond de soleil levant -->
+      <div class="relative overflow-hidden pt-6 pb-16 flex justify-center select-none" aria-hidden="true">
+        <div class="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 w-176 max-w-[140%] h-176 rounded-full"
+             style="background: radial-gradient(circle, rgba(122,193,67,.28) 0%, rgba(122,193,67,.08) 35%, transparent 65%)"></div>
+        <div appReveal="scale" class="relative scale-150 sm:scale-[2] origin-center opacity-90 my-8 sm:my-12">
+          <app-logo size="large" theme="dark"></app-logo>
         </div>
       </div>
 

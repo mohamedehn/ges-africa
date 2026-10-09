@@ -8,6 +8,7 @@ import { FeaturesSectionComponent } from '../components/sections/features/featur
 import { MethodSectionComponent } from '../components/sections/method/method-section.component';
 import { ProjectsSectionComponent } from '../components/sections/projects/projects-section.component';
 import { ContactSectionComponent } from '../components/sections/contact/contact-section.component';
+import { CursorComponent } from '../components/shared/cursor/cursor.component';
 import { CtaSectionComponent } from '../components/sections/cta/cta-section.component';
 
 @Component({
@@ -23,9 +24,11 @@ import { CtaSectionComponent } from '../components/sections/cta/cta-section.comp
     MethodSectionComponent,
     ProjectsSectionComponent,
     ContactSectionComponent,
-    CtaSectionComponent
+    CtaSectionComponent,
+    CursorComponent
   ],
   template: `
+    <app-cursor></app-cursor>
     <app-navigation></app-navigation>
     <app-hero></app-hero>
     <app-trust-bar></app-trust-bar>

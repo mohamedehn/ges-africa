@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, inject } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { LogoComponent } from '../components/shared/logo/logo.component';
@@ -56,8 +57,11 @@ import { LogoComponent } from '../components/shared/logo/logo.component';
               <div class="space-y-4">
                 <div>
                   <h3 class="font-semibold text-lg text-ges-dark">Création / Conception / Développement :</h3>
-                  <p>Mohamed E</p>
-                  <p>Web : https://mohamedehn.github.io/new-portfolio/</p>
+                  <p><strong>Coding Corp</strong></p>
+                  <p>Responsable : Mohamed Ebarhmatin, entrepreneur individuel (micro-entreprise)</p>
+                  <p>7 Impasse de la Boutas, CEDEX 202, 38090 Villefontaine, France</p>
+                  <p>SIRET : 953 263 423 00014</p>
+                  <p>Web : <a href="https://codingcorp.fr" target="_blank" rel="noopener" class="text-ges-green hover:underline">codingcorp.fr</a></p>
                 </div>
                 <div>
                   <h3 class="font-semibold text-lg text-ges-dark">Hébergement :</h3>
@@ -148,4 +152,15 @@ import { LogoComponent } from '../components/shared/logo/logo.component';
     </div>
   `
 })
-export class MentionsLegalesComponent { }
+export class MentionsLegalesComponent implements OnDestroy {
+  private meta = inject(Meta);
+
+  constructor() {
+    // Page exclue de l'indexation Google (la balise est retirée en quittant la page)
+    this.meta.updateTag({ name: 'robots', content: 'noindex, nofollow' });
+  }
+
+  ngOnDestroy() {
+    this.meta.removeTag("name='robots'");
+  }
+}
