@@ -19,6 +19,7 @@ import { CommonModule } from '@angular/common';
         </div>
         <h3 class="font-display text-xl md:text-2xl font-bold mb-2 text-white">{{ title }}</h3>
         <p class="text-sm leading-relaxed text-white/55 lg:max-w-56 mx-auto">{{ description }}</p>
+        <span *ngIf="duration" class="inline-block mt-3 text-sm font-semibold text-ges-green">{{ duration }}</span>
       </div>
     </div>
   `,
@@ -29,6 +30,7 @@ export class ProcessStepComponent {
   @Input() title!: string;
   @Input() description!: string;
   @Input() icon?: string;
+  @Input() duration?: string;
   /** conservé pour compatibilité : la timeline est désormais toujours sur fond sombre */
   @Input() darkMode = true;
 }

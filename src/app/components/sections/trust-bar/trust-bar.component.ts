@@ -53,7 +53,8 @@ export class TrustBarComponent {
     { icon: 'fa-building', label: 'GTB / GTC' },
     { icon: 'fa-bolt', label: 'CFO / CFA' },
     { icon: 'fa-charging-station', label: 'IRVE' },
-    { icon: 'fa-leaf', label: 'Audit & Conseil Énergie' }
+    { icon: 'fa-leaf', label: 'Audit & Conseil Énergie' },
+    { icon: 'fa-project-diagram', label: 'Jumeaux numériques' }
   ];
 
   trustItems: TrustItem[] = [

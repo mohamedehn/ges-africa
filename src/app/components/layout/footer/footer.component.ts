@@ -40,6 +40,7 @@ import { RevealDirective } from '../../../shared/directives/motion.directives';
               <li><a href="#services" class="text-sm text-white/50 hover:text-ges-green transition">CFO / CFA</a></li>
               <li><a href="#services" class="text-sm text-white/50 hover:text-ges-green transition">IRVE</a></li>
               <li><a href="#services" class="text-sm text-white/50 hover:text-ges-green transition">Audit & Conseil Énergie</a></li>
+              <li><a href="#digital" class="text-sm text-white/50 hover:text-ges-green transition">Jumeaux numériques & stock</a></li>
             </ul>
           </div>
 

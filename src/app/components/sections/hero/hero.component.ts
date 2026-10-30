@@ -87,7 +87,7 @@ import {
 
             <p appReveal [revealDelay]="500"
                class="text-base sm:text-lg md:text-xl text-white/65 mb-10 max-w-xl leading-relaxed mx-auto lg:mx-0">
-              Ingénierie ENR, BIM et Smart Building — de la stratégie à l'exploitation.
+              Ingénierie ENR, BIM, Smart Building et jumeaux numériques — de la stratégie à l'exploitation.
               Des livrables fiables, conformes et orientés performance.
             </p>
 

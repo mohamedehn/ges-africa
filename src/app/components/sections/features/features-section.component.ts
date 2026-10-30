@@ -62,7 +62,7 @@ export class FeaturesSectionComponent {
     { icon: 'fa-globe-africa', label: 'Présence multi-continents' },
     { icon: 'fa-handshake', label: 'Partenariats stratégiques' },
     { icon: 'fa-award', label: 'Équipe certifiée' },
-    { icon: 'fa-cogs', label: 'Outils dernière génération' }
+    { icon: 'fa-laptop-code', label: 'Ingénierie + logiciel' }
   ];
 
   features: Feature[] = [
@@ -85,6 +85,16 @@ export class FeaturesSectionComponent {
       icon: 'fa-tools',
       title: 'Exploitabilité totale',
       description: 'DOE numérique, paramétrage GTB et documents d\'exploitation complets.'
+    },
+    {
+      icon: 'fa-laptop-code',
+      title: 'Ingénierie augmentée',
+      description: 'Des outils numériques conçus par des ingénieurs qui connaissent les installations : électricité, ENR, CVC, 100 MWc de PV étudiés.'
+    },
+    {
+      icon: 'fa-server',
+      title: 'Souveraineté des données',
+      description: 'Déploiement sur serveur distant ou sur les serveurs du client, selon ses exigences de sécurité.'
     }
   ];
 }

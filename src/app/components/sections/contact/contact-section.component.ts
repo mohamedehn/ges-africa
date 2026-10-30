@@ -10,7 +10,7 @@ import { RevealDirective } from '../../../shared/directives/motion.directives';
   template: `
     <section id="contact" class="py-28 md:py-36 bg-ges-dark text-white relative overflow-hidden">
       <div class="absolute inset-0 bg-grid opacity-50"></div>
-      <div class="absolute top-0 left-0 w-[30rem] h-[30rem] bg-ges-green/10 rounded-full blur-[130px] animate-float-slow"></div>
+      <div class="absolute top-0 left-0 w-120 h-120 bg-ges-green/10 rounded-full blur-[130px] animate-float-slow"></div>
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
           <!-- Left info panel -->
@@ -152,6 +152,7 @@ import { RevealDirective } from '../../../shared/directives/motion.directives';
                     <option value="cfo">CFO/CFA</option>
                     <option value="irve">IRVE</option>
                     <option value="audit">Audit & Conseil Énergie</option>
+                    <option value="digital">Jumeau numérique & gestion de stock</option>
                     <option value="autre">Autre expertise</option>
                   </select>
                 </div>
